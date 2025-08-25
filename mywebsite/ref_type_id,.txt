@@ -1,0 +1,30 @@
+ref_type_id,
+product_name,
+product_detail,	
+product_qty,		
+product_price,
+product_image,
+
+UPDATE tbl_product SET product_view = product_view + 1 WHERE id=1;
+
+SELECT * FROM `tbl_product` WHERE `product_name` LIKE '%ข้าว%' ORDER BY 'id' ASC
+
+INSERT INTO tbl_counter () VALUES ();
+
+//จำนวนผู้เข้าชม
+SELECT COUNT(*) as totalView FROM tbl_counter;
+
+//จำนวนสมาชิก
+SELECT COUNT(*) as totalMember FROM tbl_member
+
+//จำนวนสินค้า
+SELECT COUNT(*) as totalProduct FROM tbl_product
+
+//วัน
+SELECT DATE_FORMAT(c_date,'%d/%m/%Y') as datesave, COUNT(*) as total FROM tbl_counter GROUP BY DATE_FORMAT(c_date,'%Y-%m-%d') ORDER BY DATE_FORMAT(c_date,'%Y-%m-%d') DESC;
+
+//เดือน
+SELECT MONTHNAME(c_date) as monthNames, COUNT(*) as totalByMonth FROM tbl_counter GROUP BY MONTH(c_date) ORDER BY DATE_FORMAT(c_date, '%Y-%m') DESC;
+
+//ปี
+SELECT YEAR(c_date) as years, COUNT(*) as totalByYear FROM tbl_counter GROUP BY YEAR(c_date) ORDER BY YEAR(c_date) DESC;
