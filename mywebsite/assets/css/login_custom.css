@@ -1,0 +1,110 @@
+/* พื้นหลัง Gradient + Texture */
+body {
+    animation: gradientBackground 15s ease infinite;
+    background: linear-gradient(-45deg, #4b2e2e, #7b4b2a, #d7b19d, #f3e9dc);
+    background-size: 400% 400%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+}
+
+/* แอนิเมชันเมล็ดกาแฟลอย */
+.coffee-bean {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, #6b4f4f 60%, transparent 70%);
+    border-radius: 50%;
+    animation: float 12s infinite ease-in-out;
+    opacity: 0.7;
+}
+
+.coffee-bean:nth-child(1) { left: 20%; animation-delay: 0s; }
+.coffee-bean:nth-child(2) { left: 50%; animation-delay: 4s; }
+.coffee-bean:nth-child(3) { left: 75%; animation-delay: 8s; }
+
+@keyframes float {
+    0% { transform: translateY(100vh) scale(0.8); opacity: 0; }
+    30% { opacity: 1; }
+    100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+}
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* กล่อง login */
+.login-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    overflow: hidden;
+    animation: fadeInUp 1s ease;
+    max-width: 400px;
+    width: 100%;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.login-header {
+    background: rgba(44, 62, 80, 0.85);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.login-body { padding: 2rem; }
+
+.form-control {
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+}
+
+.form-control::placeholder { color: rgba(255, 255, 255, 0.7); }
+
+.form-control:focus {
+    border-color: #ff6ec4;
+    box-shadow: 0 0 10px rgba(255, 110, 196, 0.5);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.btn-login {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem 2rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-login:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 20px rgba(118, 75, 162, 0.7);
+}
+
+.social-login {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    text-align: center;
+    color: white;
+}
